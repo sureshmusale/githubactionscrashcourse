@@ -1,0 +1,29 @@
+$ git remote add sureshmusale https://github.com/sureshmusale/testingpushfromlocal.git
+$ git status
+$ git add .
+$ git status
+$ git commit -m "connecting-localto-github"
+$ git push
+$ git push --set-upstream sureshmusale master
+$ git status
+$ git add .
+$ git commit -m "addinglogs"
+$ git push
+$ git checkout -b release
+$ git add .
+$ git commit -m "new feature"
+$ git push
+$ git push --set-upstream sureshmusale release
+$ git clone https://github.com/sureshmusale/githubactionscrashcourse.git
+$ git checkout -b newfeaturebranch
+$ git add .
+$ git status
+$ git commit -m "newfeature"
+$ git push
+$ git push --set-upstream origin newfeaturebranch
+$ git add .
+$ git status
+$ git commit -m "gitlogs"
+$ git push
+$ git branch main
+$ git checkout main

@@ -1,0 +1,290 @@
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git remote add sureshmusale https://github.com/sureshmusale/testingpushfromlocal.git
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        test
+        test2
+        test3
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git add .
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   test
+        new file:   test2
+        new file:   test3
+
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git commit -m "connecting-localto-github"
+[master (root-commit) 85b57ff] connecting-localto-github
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test
+ create mode 100644 test2
+ create mode 100644 test3
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream sureshmusale master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git push --set-upstream sureshmusale master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 231 bytes | 231.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/sureshmusale/testingpushfromlocal.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'sureshmusale/master'.
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git status
+On branch master
+Your branch is up to date with 'sureshmusale/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        gitcode-important.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git add .
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git commit -m "addinglogs"
+[master 1ad941b] addinglogs
+ 1 file changed, 65 insertions(+)
+ create mode 100644 gitcode-important.txt
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1017 bytes | 1017.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/sureshmusale/testingpushfromlocal.git
+   85b57ff..1ad941b  master -> master
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (master)
+$ git checkout -b release
+Switched to a new branch 'release'
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (release)
+$ touch newrelease1 newversionfiles
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (release)
+$ git add .
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (release)
+$ git commit -m "new feature"
+[release a517f1f] new feature
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newrelease1
+ create mode 100644 newversionfiles
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (release)
+$ git push
+fatal: The current branch release has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream sureshmusale release
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (release)
+$ git push --set-upstream sureshmusale release
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 261 bytes | 261.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'release' on GitHub by visiting:
+remote:      https://github.com/sureshmusale/testingpushfromlocal/pull/new/release
+remote:
+To https://github.com/sureshmusale/testingpushfromlocal.git
+ * [new branch]      release -> release
+branch 'release' set up to track 'sureshmusale/release'.
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (release)
+$ ls
+gitcode-important.txt  newrelease1  newversionfiles  test  test2  test3
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/tobedeleted (release)
+$ cd ..
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop
+$ mkdir deletelater
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop
+$ cd deletelater/
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater
+$ git clone https://github.com/sureshmusale/githubactionscrashcourse.git
+Cloning into 'githubactionscrashcourse'...
+remote: Enumerating objects: 13, done.
+remote: Counting objects: 100% (13/13), done.
+remote: Compressing objects: 100% (7/7), done.
+remote: Total 13 (delta 0), reused 0 (delta 0), pack-reused 0
+Receiving objects: 100% (13/13), done.
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater
+$ ls
+githubactionscrashcourse/
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater
+$ cd githubactionscrashcourse/
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (main)
+$ ls
+README.md
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (main)
+$ ls -lart
+total 5
+drwxr-xr-x 1 USER 197121  0 Sep  9 09:02 ../
+drwxr-xr-x 1 USER 197121  0 Sep  9 09:02 .github/
+-rw-r--r-- 1 USER 197121 26 Sep  9 09:02 README.md
+drwxr-xr-x 1 USER 197121  0 Sep  9 09:02 ./
+drwxr-xr-x 1 USER 197121  0 Sep  9 09:02 .git/
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (main)
+$ touch newfeature
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (main)
+$ git checkout -b newfeaturebranch
+Switched to a new branch 'newfeaturebranch'
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ touch featurefiles1 featurefiles2
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ ls
+README.md  featurefiles1  featurefiles2  newfeature
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git add .
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git status
+On branch newfeaturebranch
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   featurefiles1
+        new file:   featurefiles2
+        new file:   newfeature
+
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git commit -m "newfeature"
+[newfeaturebranch 91769b4] newfeature
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 featurefiles1
+ create mode 100644 featurefiles2
+ create mode 100644 newfeature
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git push
+fatal: The current branch newfeaturebranch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin newfeaturebranch
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git push --set-upstream origin newfeaturebranch
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 329 bytes | 329.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'newfeaturebranch' on GitHub by visiting:
+remote:      https://github.com/sureshmusale/githubactionscrashcourse/pull/new/newfeaturebranch
+remote:
+To https://github.com/sureshmusale/githubactionscrashcourse.git
+ * [new branch]      newfeaturebranch -> newfeaturebranch
+branch 'newfeaturebranch' set up to track 'origin/newfeaturebranch'.
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ vi gitlogs.txt
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git add .
+warning: in the working copy of 'gitlogs.txt', LF will be replaced by CRLF the next time Git touches it
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git status
+On branch newfeaturebranch
+Your branch is up to date with 'origin/newfeaturebranch'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   gitlogs.txt
+
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git commit -m "gitlogs"
+[newfeaturebranch a4cd1c9] gitlogs
+ 1 file changed, 93 insertions(+)
+ create mode 100644 gitlogs.txt
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.17 KiB | 1.17 MiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/sureshmusale/githubactionscrashcourse.git
+   91769b4..a4cd1c9  newfeaturebranch -> newfeaturebranch
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git branch main
+fatal: a branch named 'main' already exists
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (newfeaturebranch)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+USER@DESKTOP-I6LDOR9 MINGW64 ~/Desktop/deletelater/githubactionscrashcourse (main)
+$
